@@ -13,6 +13,8 @@ Intégration HTML/CSS/JS (sans framework) de trois pages du site de la Commander
 | Restaurants | `restaurants.html` |
 | Menu mobile | dans le header de chaque page (bouton burger) |
 
+En haut de chaque page, une barre **Aperçu PC / Mobile** permet de voir les deux versions depuis n'importe quel écran (`demo.css` + `demo-switch.js`, à ne pas reprendre dans le thème WordPress).
+
 ## Structure
 
 ```

@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Peyrassol — barre de démo « PC / Mobile » (à ne pas reprendre dans le thème)
+   ========================================================================== */
+
+.demo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 13px;
+}
+
+.demo-bar__label {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.demo-bar__group {
+  display: flex;
+  border: 1px solid var(--white);
+}
+
+.demo-bar__btn {
+  min-width: 84px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.demo-bar__btn[aria-pressed="true"] {
+  background: var(--white);
+  color: var(--black);
+}
+
+.demo-bar__btn:focus-visible {
+  outline-color: var(--white);
+}
+
+/* Mode « PC » sur téléphone : la page est dézoomée, la barre reste lisible */
+.demo-zoomed .demo-bar {
+  zoom: 3;
+}
+
+/* Mode « Mobile » sur ordinateur : la page est remplacée par le téléphone */
+.demo-mobile body {
+  background: var(--bg-grey);
+}
+
+.demo-mobile body > :not(.demo-bar):not(.demo-frame) {
+  display: none !important;
+}
+
+.demo-frame {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.demo-frame__screen {
+  width: 414px; /* 390 px d’écran + 2 × 12 px de bordure */
+  max-width: 100%;
+  height: min(868px, 100vh - 120px);
+  border: 12px solid var(--black);
+  border-radius: 40px;
+  background: var(--white);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
