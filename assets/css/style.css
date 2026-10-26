@@ -229,7 +229,7 @@ button {
   top: 100%;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 190px;
   background: var(--white);
   opacity: 0;
   visibility: hidden;
@@ -325,6 +325,83 @@ button {
 
 .sub-nav a:hover {
   text-decoration: underline;
+}
+
+.sub-nav__strong a {
+  font-weight: 600;
+}
+
+.main-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-nav__link--cta {
+  padding: 10px;
+  background: var(--black);
+  color: var(--white);
+}
+
+.main-nav__item--cta:hover > .main-nav__link--cta {
+  text-decoration: none;
+}
+
+.main-nav__item--cta .sub-nav {
+  top: calc(100% + 12px);
+  padding-left: 2px;
+}
+
+/* Agenda + langue, à droite du bandeau (à côté du burger sous 1280 px) */
+.header-tools {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 14px;
+  margin-left: 20px;
+}
+
+.header-tools__agenda {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--black);
+}
+
+.header-tools__agenda svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.header-tools__agenda:hover {
+  color: var(--red);
+}
+
+.lang-switch {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-switch__link {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--grey);
+}
+
+.lang-switch__link + .lang-switch__link {
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+}
+
+.lang-switch__link.is-current,
+.lang-switch__link:hover {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* --- Accueil : slider ------------------------------------------------- */

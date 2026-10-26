@@ -3,15 +3,16 @@
    Chargé après style.css, qu'il ne modifie pas : uniquement des surcharges
    dans des media queries.
 
-   ≤ 1023 px : tablette — menu burger et mise en page
+   ≤ 1279 px : menu burger (la nav desktop ne tient plus sur une ligne)
+   ≤ 1023 px : tablette
    ≤  767 px : mobile
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Menu burger — ≤ 1023 px
+   Menu burger — ≤ 1279 px
    -------------------------------------------------------------------------- */
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   :root {
     --header-h: 64px;
   }
@@ -164,6 +165,41 @@
   .sub-nav a {
     padding: 9px 0;
     font-size: 14px;
+  }
+
+  /* Réserver et offrir en bas du panneau */
+  .main-nav__actions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 28px;
+  }
+
+  .main-nav__item--cta {
+    border-bottom: 0;
+    background: var(--black);
+    color: var(--white);
+  }
+
+  /* Décalage à gauche = largeur du chevron, pour centrer le libellé */
+  .main-nav__link--cta {
+    padding: 16px 0 16px 48px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .main-nav__item--cta .sub-nav {
+    padding: 4px 16px 16px;
+  }
+
+  .main-nav__item--cta .sub-nav a {
+    color: var(--white);
+  }
+
+  /* Agenda + langue collés au burger */
+  .header-tools {
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 4px;
   }
 
   /* Empêche le défilement de la page derrière le menu ouvert */
