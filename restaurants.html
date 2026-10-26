@@ -18,7 +18,7 @@
   <header class="site-header">
     <div class="site-header__inner container">
       <a class="site-header__logo" href="index.html">
-        <img src="assets/img/logo-peyrassol.png" width="2067" height="295" alt="Peyrassol">
+        <img src="assets/img/logo-peyrassol.png" width="2067" height="295" alt="Peyrassol, retour à l’accueil">
       </a>
 
       <button class="burger" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
@@ -29,6 +29,9 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
         <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="index.html">Accueil</a>
+          </li>
           <li class="main-nav__item has-sub">
             <a class="main-nav__link" href="nos-vins.html">Nos vins</a>
             <button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-vins">
@@ -37,22 +40,6 @@
             <ul class="sub-nav" id="sub-vins">
               <li><a href="nos-vins.html#vins-domaine">Nos vins de domaine</a></li>
               <li><a href="nos-vins.html#vins-negoce">Nos vins de négoce</a></li>
-              <li class="sub-nav__strong"><a href="#">La boutique en ligne</a></li>
-            </ul>
-          </li>
-          <li class="main-nav__item has-sub">
-            <a class="main-nav__link" href="#">Le domaine viticole</a>
-            <button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-domaine">
-              <span class="visually-hidden">Sous-menu Le domaine viticole</span>
-            </button>
-            <ul class="sub-nav" id="sub-domaine">
-              <li><a href="#">Le Vignoble Château Peyrassol</a></li>
-              <li><a href="#">Visite et dégustation</a></li>
-              <li><a href="#">L’équipe</a></li>
-              <li><a href="#">Vos événements</a></li>
-              <li><a href="#">Agenda</a></li>
-              <li><a href="#">Horaires et contact</a></li>
-              <li class="sub-nav__strong"><a href="#">Réservez votre visite</a></li>
             </ul>
           </li>
           <li class="main-nav__item has-sub is-active">
@@ -61,59 +48,11 @@
               <span class="visually-hidden">Sous-menu Restaurants</span>
             </button>
             <ul class="sub-nav" id="sub-restaurants">
-              <li><a href="restaurants.html">Découvrir les restaurants</a></li>
               <li><a href="restaurants.html#chez-jeannette">Chez Jeannette</a></li>
               <li><a href="restaurants.html#bistrot-de-lou">Le Bistrot de Lou</a></li>
-              <li class="sub-nav__strong"><a href="#">Réservez votre table</a></li>
-            </ul>
-          </li>
-          <li class="main-nav__item has-sub">
-            <a class="main-nav__link" href="#">Hébergements</a>
-            <button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-hebergements">
-              <span class="visually-hidden">Sous-menu Hébergements</span>
-            </button>
-            <ul class="sub-nav" id="sub-hebergements">
-              <li><a href="#">La Rouvière</a></li>
-              <li><a href="#">La Commanderie</a></li>
-              <li class="sub-nav__strong"><a href="#">Réservez votre séjour</a></li>
-            </ul>
-          </li>
-          <li class="main-nav__item has-sub">
-            <a class="main-nav__link" href="#">Le centre d’art</a>
-            <button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-art">
-              <span class="visually-hidden">Sous-menu Le centre d’art</span>
-            </button>
-            <ul class="sub-nav" id="sub-art">
-              <li><a href="#">Découvrez le centre d’art</a></li>
-              <li><a href="#">La collection Philippe Austruy</a></li>
-              <li><a href="#">La programmation 2026</a></li>
-              <li><a href="#">Les expositions temporaires</a></li>
-              <li class="sub-nav__strong"><a href="#">Réservez votre visite</a></li>
             </ul>
           </li>
         </ul>
-
-        <div class="main-nav__actions">
-          <div class="main-nav__item main-nav__item--cta has-sub">
-            <a class="main-nav__link main-nav__link--cta" href="#">Réserver et offrir</a>
-            <button class="main-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-reserver">
-              <span class="visually-hidden">Sous-menu Réserver et offrir</span>
-            </button>
-            <ul class="sub-nav" id="sub-reserver">
-              <li><a href="#">Achetez nos vins</a></li>
-              <li><a href="#">Visitez notre domaine viticole</a></li>
-              <li><a href="#">Réservez votre table</a></li>
-              <li><a href="#">Visitez notre centre d’art</a></li>
-              <li><a href="#">Réservez votre séjour</a></li>
-              <li><a href="#">Boutique cadeaux</a></li>
-              <li><a href="#">Offrez une carte cadeau</a></li>
-            </ul>
-          </div>
-          <div class="lang-switch">
-            <a class="lang-switch__link is-current" href="#" aria-current="true">FR</a>
-            <a class="lang-switch__link" href="#" lang="en">EN</a>
-          </div>
-        </div>
       </nav>
     </div>
   </header>

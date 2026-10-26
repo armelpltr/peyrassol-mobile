@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  var BREAKPOINT = '(max-width: 1279px)';
+  var BREAKPOINT = '(max-width: 1023px)';
 
   var burger = document.querySelector('.burger');
   var nav = document.getElementById('main-nav');

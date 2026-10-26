@@ -30,9 +30,8 @@ assets/
 
 | Largeur | Comportement |
 | --- | --- |
-| ≥ 1280 px | desktop, navigation complète avec sous-menus au survol |
-| ≤ 1279 px | menu burger plein écran |
-| ≤ 1023 px | tablette : blocs image + texte empilés, cartes sur 2 colonnes |
+| ≥ 1024 px | desktop, navigation avec sous-menus au survol |
+| ≤ 1023 px | tablette : menu burger plein écran, blocs image + texte empilés, cartes sur 2 colonnes |
 | ≤ 767 px | mobile : carrousels horizontaux, boutons pleine largeur |
 
 ## Lancer en local

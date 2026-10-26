@@ -3,16 +3,15 @@
    Chargé après style.css, qu'il ne modifie pas : uniquement des surcharges
    dans des media queries.
 
-   ≤ 1279 px : menu burger (la nav desktop ne tient plus sur une ligne)
-   ≤ 1023 px : tablette
+   ≤ 1023 px : tablette — menu burger et mise en page
    ≤  767 px : mobile
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Menu burger — ≤ 1279 px
+   Menu burger — ≤ 1023 px
    -------------------------------------------------------------------------- */
 
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   :root {
     --header-h: 64px;
   }
@@ -165,51 +164,6 @@
   .sub-nav a {
     padding: 9px 0;
     font-size: 14px;
-  }
-
-  /* Réserver et offrir + langue en bas du panneau */
-  .main-nav__actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-    margin-top: 28px;
-  }
-
-  .main-nav__item--cta {
-    border-bottom: 0;
-    background: var(--black);
-    color: var(--white);
-  }
-
-  /* Décalage à gauche = largeur du chevron, pour centrer le libellé */
-  .main-nav__link--cta {
-    padding: 16px 0 16px 48px;
-    text-align: center;
-    color: var(--white);
-  }
-
-  .main-nav__item--cta .sub-nav {
-    padding: 4px 16px 16px;
-  }
-
-  .main-nav__item--cta .sub-nav a {
-    color: var(--white);
-  }
-
-  .lang-switch {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-  }
-
-  .lang-switch__link:not(.is-current) {
-    display: inline;
-    color: var(--grey);
-  }
-
-  .lang-switch__link.is-current {
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   /* Empêche le défilement de la page derrière le menu ouvert */

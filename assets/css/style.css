@@ -229,7 +229,7 @@ button {
   top: 100%;
   left: 0;
   right: 0;
-  height: 190px;
+  height: 80px;
   background: var(--white);
   opacity: 0;
   visibility: hidden;
@@ -325,41 +325,6 @@ button {
 
 .sub-nav a:hover {
   text-decoration: underline;
-}
-
-.sub-nav__strong a {
-  font-weight: 600;
-}
-
-.main-nav__actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.main-nav__link--cta {
-  padding: 10px;
-  background: var(--black);
-  color: var(--white);
-}
-
-.main-nav__item--cta:hover > .main-nav__link--cta {
-  text-decoration: none;
-}
-
-.main-nav__item--cta .sub-nav {
-  top: calc(100% + 12px);
-  padding-left: 2px;
-}
-
-.lang-switch__link {
-  font-size: 14px;
-  text-decoration: none;
-  color: var(--black);
-}
-
-.lang-switch__link:not(.is-current) {
-  display: none;
 }
 
 /* --- Accueil : slider ------------------------------------------------- */
