@@ -271,8 +271,7 @@
     max-width: 520px;
   }
 
-  .page-hero img,
-  .range__banner img {
+  .page-hero img {
     height: 340px;
   }
 
@@ -320,6 +319,7 @@
   .discover-grid,
   .wine-grid,
   .garden__grid {
+    position: relative; /* garde les textes masqués (absolus) dans la piste */
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: none;
@@ -486,8 +486,7 @@
   }
 
   /* Pages intérieures */
-  .page-hero img,
-  .range__banner img {
+  .page-hero img {
     height: 240px;
   }
 
@@ -528,35 +527,27 @@
     width: 100%;
   }
 
-  .wine-list {
-    padding: 48px 0;
+  .wine-tabs {
+    padding: 32px 0 56px;
   }
 
-  .wine-list__title {
-    font-size: 22px;
-    padding-inline: var(--gutter);
+  #vins-negoce .range__intro {
+    padding-top: 48px;
   }
 
-  .wine-list__title--large {
-    font-size: 26px;
+  .wine-tabs__tab {
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    padding: 12px 4px 10px;
+    font-size: 12px;
   }
 
-  .bottle-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px 16px;
-    margin-top: 32px;
+  .wine-tabs__panel .wine-grid {
+    margin-top: 24px;
   }
 
-  .bottle__img {
-    height: 180px;
-  }
-
-  .bottle__name {
-    margin: 12px 0 8px;
-    font-size: 13px;
-  }
-
-  .bottle .link-red {
+  .wine-tabs .link-red {
     padding: 6px 0;
   }
 

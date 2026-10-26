@@ -1,5 +1,5 @@
 /**
- * Peyrassol — carrousels (slider d'accueil et labels)
+ * Peyrassol — carrousels (slider d'accueil, labels) et onglets des vins
  * Le défilement repose sur le scroll-snap CSS : sans JS, tout reste
  * consultable au glisser ; ce script ajoute les points et les flèches.
  */
@@ -81,5 +81,39 @@
     window.addEventListener('resize', updateArrows);
     window.addEventListener('load', updateArrows);
     updateArrows();
+  });
+
+  // Nos vins : un onglet par couleur, chaque panneau est un slider de bouteilles
+  document.querySelectorAll('[data-tabs]').forEach(function (box) {
+    var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+
+    function select(tab, focus) {
+      tabs.forEach(function (other) {
+        var selected = other === tab;
+        var panel = document.getElementById(other.getAttribute('aria-controls'));
+        other.setAttribute('aria-selected', String(selected));
+        other.tabIndex = selected ? 0 : -1;
+        panel.hidden = !selected;
+      });
+      var track = document.getElementById(tab.getAttribute('aria-controls')).querySelector('.wine-grid');
+      if (track) track.scrollLeft = 0;
+      if (focus) tab.focus();
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { select(tab, false); });
+      tab.addEventListener('keydown', function (event) {
+        var next = null;
+        if (event.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        if (event.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (event.key === 'Home') next = tabs[0];
+        if (event.key === 'End') next = tabs[tabs.length - 1];
+        if (!next) return;
+        event.preventDefault();
+        select(next, true);
+      });
+    });
+
+    select(tabs[0], false);
   });
 })();

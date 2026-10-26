@@ -143,176 +143,208 @@
     </section>
 
     <section class="range" id="vins-domaine">
-      <div class="range__banner">
-        <img src="assets/img/vins-domaine.jpg" width="2000" height="2500" alt="Bouteilles du Clos Peyrassol blanc" loading="lazy">
-      </div>
       <div class="range__intro container">
         <h2 class="page-title">Nos vins domaine</h2>
         <p>Les vins issus du vignoble Château Peyrassol sont la plus parfaite expression de la qualité du terroir et de ce savoir-faire plusieurs fois centenaire. Les vins issus des raisins de notre vignoble : 1204, Le Clos Peyrassol, Château Peyrassol et la cuvée XIIIE. Tous officiellement labéllisés biologique depuis le millésime 2022.</p>
         <a class="btn" href="#">Boutique en ligne</a>
       </div>
 
-      <div class="wine-list">
-        <h3 class="wine-list__title">Les Rosés Château Peyrassol</h3>
-        <ul class="bottle-grid">
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">1204</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Clos Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Château Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">XIIIe</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="wine-list wine-list--grey">
-        <h3 class="wine-list__title">Les Blancs Château Peyrassol</h3>
-        <ul class="bottle-grid">
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">1204</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Clos Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Château Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">XIIIe</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="wine-list">
-        <h3 class="wine-list__title">Les Rouges Château Peyrassol</h3>
-        <ul class="bottle-grid">
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">1204</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Clos Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Château Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">XIIIe</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe</span></a>
-          </li>
-        </ul>
+      <div class="wine-tabs container" data-tabs>
+        <div class="wine-tabs__list" role="tablist" aria-label="Couleurs des vins domaine">
+          <button class="wine-tabs__tab" type="button" role="tab" id="tab-domaine-roses" aria-controls="panel-domaine-roses" aria-selected="true">Rosés</button>
+          <button class="wine-tabs__tab" type="button" role="tab" id="tab-domaine-blancs" aria-controls="panel-domaine-blancs" aria-selected="false">Blancs</button>
+          <button class="wine-tabs__tab" type="button" role="tab" id="tab-domaine-rouges" aria-controls="panel-domaine-rouges" aria-selected="false">Rouges</button>
+        </div>
+        <div class="wine-tabs__panel" role="tabpanel" id="panel-domaine-roses" aria-labelledby="tab-domaine-roses">
+          <h3 class="visually-hidden">Les rosés</h3>
+          <ul class="wine-grid">
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">1204</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204 rosé</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Clos Peyrassol</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol rosé</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Château Peyrassol</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol rosé</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">XIIIe</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe rosé</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="wine-tabs__panel" role="tabpanel" id="panel-domaine-blancs" aria-labelledby="tab-domaine-blancs">
+          <h3 class="visually-hidden">Les blancs</h3>
+          <ul class="wine-grid">
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">1204</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204 blanc</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Clos Peyrassol</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol blanc</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Château Peyrassol</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol blanc</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">XIIIe</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe blanc</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="wine-tabs__panel" role="tabpanel" id="panel-domaine-rouges" aria-labelledby="tab-domaine-rouges">
+          <h3 class="visually-hidden">Les rouges</h3>
+          <ul class="wine-grid">
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">1204</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204 rouge</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Clos Peyrassol</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol rouge</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Château Peyrassol</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol rouge</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">XIIIe</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe rouge</span></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section class="range" id="vins-negoce">
-      <div class="range__banner">
-        <img src="assets/img/vins-negoce.jpg" width="2000" height="2500" alt="Bouteille Peyrassol Les Commandeurs" loading="lazy">
-      </div>
       <div class="range__intro container">
         <h2 class="page-title">Nos vins négoce</h2>
         <p>Les vins issus du vignoble Château Peyrassol sont la plus parfaite expression de la qualité du terroir et de ce savoir-faire plusieurs fois centenaire. Les vins issus des raisins de notre vignoble : 1204, Le Clos Peyrassol, Château Peyrassol et la cuvée XIIIE. Tous officiellement labéllisés biologique depuis le millésime 2022.</p>
         <a class="btn" href="#">Boutique en ligne</a>
       </div>
 
-      <div class="wine-list">
-        <h3 class="wine-list__title wine-list__title--large">Les Rosés</h3>
-        <ul class="bottle-grid">
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">1204</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Clos Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Château Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">XIIIe</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="wine-list wine-list--grey">
-        <h3 class="wine-list__title wine-list__title--large">Les Blancs</h3>
-        <ul class="bottle-grid">
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">1204</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Clos Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Château Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">XIIIe</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="wine-list">
-        <h3 class="wine-list__title wine-list__title--large">Les Rouges</h3>
-        <ul class="bottle-grid">
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">1204</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Clos Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">Château Peyrassol</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol</span></a>
-          </li>
-          <li class="bottle">
-            <img class="bottle__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
-            <h4 class="bottle__name">XIIIe</h4>
-            <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe</span></a>
-          </li>
-        </ul>
+      <div class="wine-tabs container" data-tabs>
+        <div class="wine-tabs__list" role="tablist" aria-label="Couleurs des vins négoce">
+          <button class="wine-tabs__tab" type="button" role="tab" id="tab-negoce-roses" aria-controls="panel-negoce-roses" aria-selected="true">Rosés</button>
+          <button class="wine-tabs__tab" type="button" role="tab" id="tab-negoce-blancs" aria-controls="panel-negoce-blancs" aria-selected="false">Blancs</button>
+          <button class="wine-tabs__tab" type="button" role="tab" id="tab-negoce-rouges" aria-controls="panel-negoce-rouges" aria-selected="false">Rouges</button>
+        </div>
+        <div class="wine-tabs__panel" role="tabpanel" id="panel-negoce-roses" aria-labelledby="tab-negoce-roses">
+          <h3 class="visually-hidden">Les rosés</h3>
+          <ul class="wine-grid">
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">1204</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204 rosé</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Clos Peyrassol</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol rosé</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Château Peyrassol</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol rosé</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">XIIIe</h4>
+              <p class="wine-card__color">Rosé</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe rosé</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="wine-tabs__panel" role="tabpanel" id="panel-negoce-blancs" aria-labelledby="tab-negoce-blancs">
+          <h3 class="visually-hidden">Les blancs</h3>
+          <ul class="wine-grid">
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">1204</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204 blanc</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Clos Peyrassol</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol blanc</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Château Peyrassol</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol blanc</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">XIIIe</h4>
+              <p class="wine-card__color">Blanc</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe blanc</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="wine-tabs__panel" role="tabpanel" id="panel-negoce-rouges" aria-labelledby="tab-negoce-rouges">
+          <h3 class="visually-hidden">Les rouges</h3>
+          <ul class="wine-grid">
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-1204.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">1204</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur 1204 rouge</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-clos-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Clos Peyrassol</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Clos Peyrassol rouge</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-chateau-peyrassol.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">Château Peyrassol</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur Château Peyrassol rouge</span></a>
+            </li>
+            <li class="wine-card">
+              <img class="wine-card__img" src="assets/img/bouteille-xiiie.jpg" width="420" height="825" alt="" loading="lazy">
+              <h4 class="wine-card__name">XIIIe</h4>
+              <p class="wine-card__color">Rouge</p>
+              <a class="link-red" href="#">En savoir plus<span class="visually-hidden"> sur XIIIe rouge</span></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 

@@ -726,12 +726,6 @@ button {
 
 /* --- Nos vins --------------------------------------------------------- */
 
-.range__banner img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
 .range__intro {
   padding: 32px 0 0;
   text-align: center;
@@ -744,50 +738,60 @@ button {
   line-height: 1.45;
 }
 
-.wine-list {
-  padding: 70px 0 70px;
+.wine-tabs {
+  padding: 56px 0 90px;
   text-align: center;
 }
 
-.wine-list--grey {
+#vins-negoce {
   background: var(--bg-grey);
 }
 
-.wine-list--grey .bottle__img {
-  mix-blend-mode: multiply;
+#vins-negoce .range__intro {
+  padding-top: 70px;
 }
 
-.wine-list__title {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--black);
+#vins-negoce .wine-card {
+  border-color: #dcd6d6;
+  background: var(--white);
 }
 
-.wine-list__title--large {
-  font-size: 32px;
+/* Onglets Rosés / Blancs / Rouges, même trait que l'onglet de l'accueil */
+.wine-tabs__list {
+  display: flex;
+  justify-content: center;
 }
 
-.bottle-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  width: min(var(--container), 100% - 2 * var(--gutter));
-  margin: 44px auto 0;
-}
-
-.bottle__img {
-  width: auto;
-  height: 220px;
-  margin-inline: auto;
-}
-
-.bottle__name {
-  margin: 16px 0 14px;
-  font-size: 12px;
-  font-weight: 400;
+.wine-tabs__tab {
+  min-width: 160px;
+  padding: 0 16px 10px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  background: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--grey);
+}
+
+.wine-tabs__tab:hover {
   color: var(--black);
+}
+
+.wine-tabs__tab[aria-selected="true"] {
+  border-bottom-color: var(--black);
+  color: var(--black);
+}
+
+.wine-tabs__panel .wine-grid {
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.wine-tabs .link-red {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
 }
 
 /* --- Restaurants ------------------------------------------------------ */
