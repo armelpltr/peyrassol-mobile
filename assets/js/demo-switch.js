@@ -9,6 +9,14 @@
 (function () {
   'use strict';
 
+  var params = new URLSearchParams(window.location.search);
+
+  // Page « Menu mobile » (?menu) : le menu s'ouvre dès le chargement
+  if (params.has('menu')) {
+    var burger = document.querySelector('.burger');
+    if (burger && getComputedStyle(burger).display !== 'none') burger.click();
+  }
+
   // Dans le cadre du téléphone : pas de barre
   if (window.self !== window.top) return;
 
@@ -36,9 +44,27 @@
 
   // --- Barre ---------------------------------------------------------------
 
+  var PAGES = [
+    { label: 'Accueil', href: 'index.html' },
+    { label: 'Menu mobile', href: 'index.html?menu=1', menu: true },
+    { label: 'Nos vins', href: 'nos-vins.html' },
+    { label: 'Restaurants', href: 'restaurants.html' }
+  ];
+  var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+
+  var pageLinks = PAGES.map(function (page) {
+    var current = page.menu
+      ? params.has('menu')
+      : !params.has('menu') && page.href === currentFile;
+    return '<a class="demo-bar__btn"' + (page.menu ? ' data-menu' : '') +
+      ' href="' + page.href + '"' + (current ? ' aria-current="page"' : '') + '>' +
+      page.label + '</a>';
+  }).join('');
+
   var bar = document.createElement('div');
   bar.className = 'demo-bar';
   bar.innerHTML =
+    '<nav class="demo-bar__group" aria-label="Pages de la démo">' + pageLinks + '</nav>' +
     '<span class="demo-bar__label">Aperçu</span>' +
     '<div class="demo-bar__group" role="group" aria-label="Version affichée">' +
     '<button type="button" class="demo-bar__btn" data-vue="pc">PC</button>' +
@@ -46,7 +72,12 @@
     '</div>';
   document.body.insertBefore(bar, document.body.firstChild);
 
-  var buttons = bar.querySelectorAll('.demo-bar__btn');
+  var buttons = bar.querySelectorAll('button.demo-bar__btn');
+
+  // Le menu n'existe qu'en version mobile : on y bascule avant d'y aller
+  bar.querySelector('[data-menu]').addEventListener('click', function () {
+    saveChoice('mobile');
+  });
 
   // --- Modes ---------------------------------------------------------------
 

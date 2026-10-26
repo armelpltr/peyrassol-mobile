@@ -4,9 +4,10 @@
 
 .demo-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px 12px;
   padding: 8px 16px;
   background: var(--black);
   color: var(--white);
@@ -24,11 +25,19 @@
   border: 1px solid var(--white);
 }
 
+.demo-bar__label {
+  margin-left: 12px;
+}
+
 .demo-bar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 84px;
   min-height: 36px;
   padding: 6px 14px;
   border: 0;
+  text-decoration: none;
   background: transparent;
   color: var(--white);
   font-size: 13px;
@@ -37,13 +46,43 @@
   text-transform: uppercase;
 }
 
-.demo-bar__btn[aria-pressed="true"] {
+.demo-bar__btn + .demo-bar__btn {
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.demo-bar__btn[aria-pressed="true"],
+.demo-bar__btn[aria-current="page"] {
   background: var(--white);
   color: var(--black);
 }
 
 .demo-bar__btn:focus-visible {
   outline-color: var(--white);
+}
+
+@media (max-width: 767px) {
+  .demo-bar {
+    padding: 8px;
+  }
+
+  .demo-bar__btn {
+    min-width: 0;
+    padding: 6px 10px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .demo-bar__label {
+    margin-left: 0;
+  }
+}
+
+/* Menu ouvert : la barre laisse sa place pour que le header reste en haut */
+@media (max-width: 1279px) {
+  .menu-open .demo-bar {
+    display: none;
+  }
 }
 
 /* Mode « PC » sur téléphone : la page est dézoomée, la barre reste lisible */
