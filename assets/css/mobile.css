@@ -1,0 +1,686 @@
+/* ==========================================================================
+   Peyrassol — responsive (tablette + mobile)
+   Chargé après style.css, qu'il ne modifie pas : uniquement des surcharges
+   dans des media queries.
+
+   ≤ 1279 px : menu burger (la nav desktop ne tient plus sur une ligne)
+   ≤ 1023 px : tablette
+   ≤  767 px : mobile
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Menu burger — ≤ 1279 px
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1279px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .site-header {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-header::after {
+    display: none;
+  }
+
+  .site-header__inner {
+    justify-content: space-between;
+  }
+
+  .site-header__logo img {
+    width: 150px;
+  }
+
+  /* Bouton burger : 3 barres qui se changent en croix */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    padding: 0 10px;
+    border: 0;
+    background: none;
+  }
+
+  .burger__bar {
+    display: block;
+    height: 1.5px;
+    background: var(--black);
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  .burger[aria-expanded="true"] .burger__bar:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+
+  .burger[aria-expanded="true"] .burger__bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger[aria-expanded="true"] .burger__bar:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  /* Panneau plein écran sous le header */
+  .main-nav {
+    position: fixed;
+    top: var(--header-h);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 8px var(--gutter) 40px;
+    background: var(--white);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+  }
+
+  .main-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+
+  .main-nav__list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .main-nav__item {
+    display: grid;
+    grid-template-columns: 1fr 48px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .main-nav__link {
+    padding: 18px 0;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+  }
+
+  .main-nav__item:hover > .main-nav__link {
+    text-decoration: none;
+  }
+
+  .main-nav__item.is-active > .main-nav__link {
+    text-decoration: underline;
+  }
+
+  /* Chevron d'ouverture du sous-menu */
+  .main-nav__toggle {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  .main-nav__toggle::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    margin-top: -5px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.25s;
+  }
+
+  .main-nav__toggle[aria-expanded="true"]::before {
+    margin-top: 4px;
+    transform: rotate(-135deg);
+  }
+
+  /* Sous-menus en accordéon (ouverts par menu-mobile.js) */
+  .sub-nav,
+  .has-sub:is(:hover, :focus-within) > .sub-nav {
+    position: static;
+    grid-column: 1 / -1;
+    display: none;
+    min-width: 0;
+    padding: 0 0 16px 14px;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+
+  .has-sub.is-open > .sub-nav {
+    display: block;
+  }
+
+  .sub-nav a {
+    padding: 9px 0;
+    font-size: 14px;
+  }
+
+  /* Réserver et offrir + langue en bas du panneau */
+  .main-nav__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    margin-top: 28px;
+  }
+
+  .main-nav__item--cta {
+    border-bottom: 0;
+    background: var(--black);
+    color: var(--white);
+  }
+
+  /* Décalage à gauche = largeur du chevron, pour centrer le libellé */
+  .main-nav__link--cta {
+    padding: 16px 0 16px 48px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .main-nav__item--cta .sub-nav {
+    padding: 4px 16px 16px;
+  }
+
+  .main-nav__item--cta .sub-nav a {
+    color: var(--white);
+  }
+
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .lang-switch__link:not(.is-current) {
+    display: inline;
+    color: var(--grey);
+  }
+
+  .lang-switch__link.is-current {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Empêche le défilement de la page derrière le menu ouvert */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablette — ≤ 1023 px
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .hero-slider__slide img {
+    height: 520px;
+  }
+
+  .discover-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .discover-card__img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .split,
+  .split--reverse,
+  .split--resto,
+  .split--resto.split--reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 64px;
+  }
+
+  .split--reverse .split__img {
+    order: 0;
+  }
+
+  .split__img {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 16 / 10;
+  }
+
+  .split__body,
+  .split--reverse .split__body,
+  .split--resto .split__body,
+  .split--resto.split--reverse .split__body {
+    justify-self: stretch;
+    width: min(680px, 100% - 2 * var(--gutter));
+    max-width: none;
+    margin-inline: auto;
+    padding: 0;
+  }
+
+  .full-img img {
+    height: 380px;
+  }
+
+  .visit {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 56px;
+  }
+
+  .visit__title {
+    max-width: 520px;
+  }
+
+  .page-hero img,
+  .range__banner img {
+    height: 340px;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__brand {
+    margin-top: 80px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile — ≤ 767 px
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  :root {
+    --gutter: 20px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  .lead {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .btn {
+    min-height: 48px;
+  }
+
+  /* Carrousels horizontaux (cartes, bouteilles, potager) :
+     la ligne déborde de la gouttière pour laisser deviner la carte suivante */
+  .discover-grid,
+  .wine-grid,
+  .garden__grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    gap: 16px;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 0 var(--gutter) 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+
+  .discover-grid::-webkit-scrollbar,
+  .wine-grid::-webkit-scrollbar,
+  .garden__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .discover-grid > *,
+  .wine-grid > *,
+  .garden__grid > * {
+    scroll-snap-align: start;
+  }
+
+  /* Accueil */
+  .hero-slider__slide img {
+    height: min(72svh, 520px);
+  }
+
+  .hero-slider__dots {
+    bottom: 20px;
+  }
+
+  .intro {
+    padding-top: 48px;
+  }
+
+  .kicker {
+    font-size: 12px;
+  }
+
+  .intro .section-title {
+    margin-top: 10px;
+  }
+
+  .discover-grid {
+    grid-auto-columns: 74%;
+    margin-top: 32px;
+  }
+
+  .discover-card__img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .discover-card__title {
+    margin: 10px 0 8px;
+    font-size: 20px;
+  }
+
+  .discover-card .link-red {
+    font-size: 13px;
+  }
+
+  .home-wines {
+    padding-top: 64px;
+  }
+
+  .home-wines .lead {
+    margin-top: 18px;
+  }
+
+  .home-wines__tab {
+    margin-top: 36px;
+  }
+
+  .wine-grid {
+    grid-auto-columns: 58%;
+  }
+
+  .wine-card {
+    padding: 28px 12px 20px;
+  }
+
+  .wine-card__img {
+    height: 190px;
+  }
+
+  .home-wines .btn-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .home-wines .btn {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .split,
+  .split--reverse,
+  .split--resto,
+  .split--resto.split--reverse {
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .split__img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .split__title {
+    margin-bottom: 14px;
+    font-size: 28px;
+  }
+
+  .split__body > p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .split__body .btn {
+    width: 100%;
+  }
+
+  .full-img {
+    margin-top: 56px;
+  }
+
+  .full-img img {
+    height: 260px;
+  }
+
+  .visit {
+    gap: 32px;
+    padding: 40px 0 48px;
+  }
+
+  .visit__title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .visit__more {
+    font-size: 13px;
+  }
+
+  .visit .btn--small {
+    min-height: 44px;
+    padding-inline: 16px;
+    font-size: 12px;
+  }
+
+  .visit__hours {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .hours dt {
+    font-size: 14px;
+  }
+
+  .hours dd {
+    font-size: 14px;
+  }
+
+  /* Pages intérieures */
+  .page-hero img,
+  .range__banner img {
+    height: 240px;
+  }
+
+  .page-intro {
+    padding: 32px 0 24px;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+  }
+
+  .page-intro .lead {
+    margin-top: 16px;
+  }
+
+  .btn-row--tags {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .btn--tag {
+    min-height: 44px;
+  }
+
+  /* Nos vins */
+  .range__intro {
+    padding-top: 28px;
+  }
+
+  .range__intro p {
+    margin: 16px auto 28px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .range__intro .btn {
+    width: 100%;
+  }
+
+  .wine-list {
+    padding: 48px 0;
+  }
+
+  .wine-list__title {
+    font-size: 22px;
+    padding-inline: var(--gutter);
+  }
+
+  .wine-list__title--large {
+    font-size: 26px;
+  }
+
+  .bottle-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 16px;
+    margin-top: 32px;
+  }
+
+  .bottle__img {
+    height: 180px;
+  }
+
+  .bottle__name {
+    margin: 12px 0 8px;
+    font-size: 13px;
+  }
+
+  .bottle .link-red {
+    padding: 6px 0;
+  }
+
+  /* Restaurants */
+  .prose {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  .prose p + p,
+  .prose__kicker {
+    margin-top: 22px;
+  }
+
+  .prose__kicker {
+    font-size: 15px;
+  }
+
+  .split__subtitle {
+    font-size: 15px;
+  }
+
+  .garden {
+    padding-top: 56px;
+  }
+
+  .garden__grid {
+    grid-auto-columns: 78%;
+    margin-top: 24px;
+  }
+
+  /* Labels */
+  .labels {
+    padding: 40px 0;
+  }
+
+  .labels__inner {
+    gap: 4px;
+  }
+
+  .labels__track {
+    gap: 40px;
+  }
+
+  .labels__item img {
+    height: 72px;
+  }
+
+  .labels__item:first-child img {
+    height: 58px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 48px 0 32px;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .site-footer__title {
+    font-size: 24px;
+  }
+
+  .site-footer__address {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .social {
+    gap: 12px;
+    margin-top: 20px;
+    margin-left: -6px;
+  }
+
+  .social__link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social__link svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .site-footer__legal {
+    margin-top: 14px;
+    padding: 6px 0;
+  }
+
+  .newsletter {
+    padding-top: 0;
+  }
+
+  .newsletter__title {
+    font-size: 18px;
+  }
+
+  .newsletter__input {
+    height: 52px;
+    margin-top: 14px;
+  }
+
+  .newsletter__button {
+    height: 48px;
+    margin-top: 12px;
+  }
+
+  .site-footer__brand {
+    margin-top: 48px;
+  }
+}
